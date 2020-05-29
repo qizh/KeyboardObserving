@@ -49,7 +49,7 @@ extension Keyboard {
 
     // MARK: - Initializers
 
-    init(animationDuration: TimeInterval, height: CGFloat) {
+    public init(animationDuration: TimeInterval, height: CGFloat) {
       self.animationDuration = animationDuration
       self.height = height
     }
@@ -57,7 +57,11 @@ extension Keyboard {
     // MARK: - Static Properties
 
     fileprivate static let `default` = Keyboard.State(animationDuration: 0.25, height: 0)
-
+    
+    #if DEBUG
+    fileprivate static let demo = Keyboard.State(animationDuration: 0.25, height: 230)
+    #endif
+    
     // MARK: - Static Methods
 
     static func from(notification: Notification) -> Keyboard.State? {
