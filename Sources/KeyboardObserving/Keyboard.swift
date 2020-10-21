@@ -40,7 +40,7 @@ public final class Keyboard: ObservableObject {
 // MARK: - Nested Types
 extension Keyboard {
 
-  public struct State {
+  public struct State: Hashable {
 
     // MARK: - Properties
 
